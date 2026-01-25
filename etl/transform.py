@@ -50,7 +50,7 @@ def get_teams(games_stats):
     teams_home = teams[["homecode", "hometeam"]].rename(columns={"homecode":"code", "hometeam":"team"})
     teams_away = teams[["awaycode", "awayteam"]].rename(columns={"awaycode":"code", "awayteam":"team"})
     teams_all = pd.concat([teams_home, teams_away], ignore_index=True)
-    teams_all.rename(columns = {
+    teams_all = teams_all.rename(columns = {
         "team": "name"
     })
     return teams_all
@@ -59,6 +59,7 @@ def get_games(games_stats):
     games = games_stats[["Round", "group", "date", "time", "homecode", "homescore", "awaycode", "awayscore"]]
     games = games.rename(columns = {
         "Round": "round",
+        "group": "type",
         "homecode": "home_team_code",
         "homescore": "home_team_score",
         "awaycode": "away_team_code",
@@ -69,7 +70,7 @@ def get_games(games_stats):
 def get_players_teams(players_stats):
     players_teams = players_stats[["player.code", "player.team.code"]]
     players_teams = players_teams.rename(columns = {
-        "players.code": "player_code",
+        "player.code": "player_code",
         "player.team.code": "team_code"
     })
     return players_teams

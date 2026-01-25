@@ -1,0 +1,39 @@
+Chatbot ready :) !
+Type 'exit' to quit.
+
+You: For which team Nemanja Nedovic plays?
+Bot: Nemanja Nedović plays for **Crvena Zvezda Meridianbet Belgrade**.
+
+You: Give me all stats for Nemanja Nedovic.
+Bot: Nemanja Nedovic (age 33) has played **27 games**, averaging **18.57 minutes** per game. His stats are:
+
+- **Offensive rebounds %:** 3.1%  
+- **Defensive rebounds %:** 6.2%  
+- **Total rebounds %:** 4.6%  
+- **Assist ratio:** 23.7%  
+- **Turnover ratio:** 10.8%  
+- **2PT attempts ratio:** 23.7%  
+- **3PT attempts ratio:** 35.4%  
+- **Free throws rate:** 25%
+
+You: Give me list of all players who plays for Crvena Zvezda.
+Bot: Here are the players who play for **Crvena Zvezda Meridianbet Belgrade**, along with their ages:
+
+- **Canaan, Isaiah** (33)  
+- **Davidovac, Dejan** (29)  
+- **Dobric, Ognjen** (30)  
+- **Dos Santos, Yago** (25)  
+- **Giedraitis, Rokas** (32)  
+- **Kalinic, Nikola** (33)  
+- **Miller-McIntyre, Codi** (30)  
+- **Mitrovic, Luka** (31)  
+- **Nedovic, Nemanja** (33)
+
+You: What was result of two games between Crvena Zvezda and Partizan.
+Bot: The two games between Crvena Zvezda and Partizan (from the results returned) finished as follows:
+
+- **Nov 21, 2024:** Crvena Zvezda **77** – **89** Partizan  
+- **Jan 31, 2025:** Partizan **71** – **73** Crvena Zvezda
+
+You: Give me team code for Crvena Zvezda.
+Bot: The team code for **CRVENA ZVEZDA MERIDIANBET BELGRADE** (Crvena Zvezda) is **RED**.
