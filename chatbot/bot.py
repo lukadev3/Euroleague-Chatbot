@@ -12,7 +12,7 @@ from llama_index.core.objects import (
 )
 from llama_index.core import VectorStoreIndex
 from llama_index.embeddings.openai import OpenAIEmbedding
-from utils import table_schema_objs
+from utils import get_table_schema_obj, load_teams_and_players_from_engine
 import os
 
 def main():
@@ -21,18 +21,18 @@ def main():
     llm = OpenAI(temperature=0.1, model="gpt-5.2")
 
     engine = create_engine("sqlite:///../euroleague.db")
+    teams, players = load_teams_and_players_from_engine(engine)
     sql_database = SQLDatabase(engine, include_tables=["games", "players", "players_teams", "players_average_stats", "teams"])
    
-
     table_node_mapping = SQLTableNodeMapping(sql_database)
     obj_index = ObjectIndex.from_objects(
-        table_schema_objs,
+        get_table_schema_obj(teams, players),
         table_node_mapping,
         VectorStoreIndex,
         embed_model=OpenAIEmbedding(model="text-embedding-3-large"),
     )
     query_engine = SQLTableRetrieverQueryEngine(
-        sql_database, obj_index.as_retriever(similarity_top_k=3), llm=llm, verbose=False #True
+        sql_database, obj_index.as_retriever(similarity_top_k=3), llm=llm, verbose=False
     )
     
     print("Chatbot ready :) !")
@@ -46,6 +46,7 @@ def main():
         try:
             result = query_engine.query(user_input)
             print("Bot:", result)
+            print("\n")
         except Exception as e:
             print("Error:", e)
 
