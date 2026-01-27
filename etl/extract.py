@@ -8,6 +8,10 @@ def get_all_games(season):
     global team_stats
     return team_stats.get_gamecodes_season(season)
 
-def get_all_players_stats(season):
+def get_advanced_players_stats(season):
     global player_stats
     return player_stats.get_player_stats_single_season(season=season, endpoint="advanced")
+
+def get_scoring_players_stats(season):
+    global player_stats
+    return player_stats.get_player_stats_single_season(season=season, endpoint="scoring")

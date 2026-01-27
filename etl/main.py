@@ -12,6 +12,5 @@ def main():
             print("Invalid input. Please enter a number for the season.")
     load_data(season)
 
-
 if __name__ == "__main__":
     main()

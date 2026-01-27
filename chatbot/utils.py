@@ -57,7 +57,7 @@ def get_table_schema_obj(teams, players):
         SQLTableSchema(
             table_name="players_average_stats",
             context_str="""
-                Table players_average_stats contains season-level average statistics per player.
+                Table players_average_stats contains season-level average player statistics.
                 Each row represents one player.
 
                 Column format:
@@ -69,13 +69,22 @@ def get_table_schema_obj(teams, players):
                 - rebounds_percentage: numeric percentage
                 - assists_ratio: numeric percentage
                 - turnovers_ratio: numeric percentage
-                - two_point_attempts_ratio: numeric percentage
-                - three_point_attempts_ratio: numeric percentage
-                - free_throws_rate: numeric percentage
+                - two_point_attempts_share: numeric percentage
+                - three_point_attempts_share: numeric percentage
+                - free_throws_attempts_share: numeric percentage
+                - two_point_made_share: numeric percentage
+                - three_point_made_share: numeric percentage
+                - free_throws_made_share: numeric percentage
+                - two_point_rate: numeric percentage
+                - three_point_rate: numeric percentage
+                - points_from_two_percentage: numeric percentage
+                - points_from_three_percentage: numeric percentage
+                - points_from_free_throws_percentage: numeric percentage
 
-                Use this table for questions about players stats.
-                Percentages may be stored as numbers or strings; cast to numeric if needed.
+                Use this table for questions about players stats, efficiency, and scoring profile.
                 Always JOIN with players to retrieve player names.
+                Join with players_teams and teams to retrieve the player's team.
+                Percentages may be stored as numbers or strings; cast to numeric if needed.
             """
         ),
         SQLTableSchema(
